@@ -1,16 +1,145 @@
 ---
-
+import '../styles/global.css'
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Calendario de Eventos - Comunidad Valenciana</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="min-h-screen bg-gradient-to-br from-[#F2BC94]/10 to-[#F2BC94]/30 font-sans">
+		<header class="bg-white/80 shadow-2xl p-6 border-b-4 border-[#722620] backdrop-blur-md">
+			<h1 class="text-4xl font-bold text-center mb-8 text-[#30110D] tracking-tight">
+				<span class="text-[#722620]">Calendario de Eventos</span> - Comunidad Valenciana
+			</h1>
+			<div class="flex flex-wrap gap-8 justify-center">
+				<div class="filter-group w-72">
+					<label class="block text-sm font-semibold text-[#722620] mb-2 uppercase tracking-wider">Tipo de Evento:</label>
+					<div class="relative">
+						<button id="event-type-btn" class="w-full flex items-center justify-between px-4 py-3 rounded-lg border-2 border-[#F2BC94] shadow-lg hover:border-[#722620]/70 transition-all duration-300 bg-white/90 backdrop-blur-sm text-[#30110D]">
+							<span>Seleccionar tipos</span>
+							<svg class="w-5 h-5 text-[#722620]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+						</button>
+						<div id="event-type-dropdown" class="hidden absolute z-10 w-full mt-2 bg-white rounded-lg shadow-xl border-2 border-[#F2BC94] p-3 space-y-2">
+							<button data-value="cultural" class="filter-option w-full text-left px-3 py-2 rounded-full hover:bg-[#F2BC94]/20 transition-all duration-300">Cultural</button>
+							<button data-value="deportivo" class="filter-option w-full text-left px-3 py-2 rounded-full hover:bg-[#F2BC94]/20 transition-all duration-300">Deportivo</button>
+							<button data-value="gastronomico" class="filter-option w-full text-left px-3 py-2 rounded-full hover:bg-[#F2BC94]/20 transition-all duration-300">Gastronómico</button>
+						</div>
+						<div id="event-type-selected" class="flex flex-wrap gap-2 mt-2"></div>
+					</div>
+				</div>
+				<div class="filter-group w-72">
+					<label class="block text-sm font-semibold text-[#722620] mb-2 uppercase tracking-wider">Ubicación:</label>
+					<div class="relative">
+						<button id="location-btn" class="w-full flex items-center justify-between px-4 py-3 rounded-lg border-2 border-[#F2BC94] shadow-lg hover:border-[#722620]/70 transition-all duration-300 bg-white/90 backdrop-blur-sm text-[#30110D]">
+							<span>Seleccionar ubicaciones</span>
+							<svg class="w-5 h-5 text-[#722620]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+						</button>
+						<div id="location-dropdown" class="hidden absolute z-10 w-full mt-2 bg-white rounded-lg shadow-xl border-2 border-[#F2BC94] p-3 space-y-2">
+							<button data-value="valencia" class="filter-option w-full text-left px-3 py-2 rounded-full hover:bg-[#F2BC94]/20 transition-all duration-300">Valencia</button>
+							<button data-value="alicante" class="filter-option w-full text-left px-3 py-2 rounded-full hover:bg-[#F2BC94]/20 transition-all duration-300">Alicante</button>
+							<button data-value="castellon" class="filter-option w-full text-left px-3 py-2 rounded-full hover:bg-[#F2BC94]/20 transition-all duration-300">Castellón</button>
+						</div>
+						<div id="location-selected" class="flex flex-wrap gap-2 mt-2"></div>
+						</select>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="container mx-auto p-6 my-8">
+			<div class="calendar-container bg-white/90 rounded-2xl shadow-2xl p-8 border-2 border-[#F2BC94] hover:border-[#722620]/70 transition-all duration-500 transform hover:scale-[1.01]">
+				<div class="calendar-header flex justify-between items-center mb-8">
+					<button class="prev-month text-[#722620] hover:text-[#30110D] transition-all duration-300 text-2xl font-bold px-5 py-2 rounded-lg hover:bg-[#F2BC94]/30 hover:shadow-lg transform hover:-translate-x-1">&lt;</button>
+					<h2 class="text-3xl font-bold text-[#30110D] tracking-tight">
+						<span class="text-[#722620]">Mes</span> Año
+					</h2>
+					<button class="next-month text-[#722620] hover:text-[#30110D] transition-all duration-300 text-2xl font-bold px-5 py-2 rounded-lg hover:bg-[#F2BC94]/30 hover:shadow-lg transform hover:translate-x-1">&gt;</button>
+				</div>
+				<div class="calendar-grid">
+					<div class="grid grid-cols-7 gap-4 mb-6">
+						<div class="text-center font-semibold text-[#722620] uppercase text-sm tracking-wider">Lun</div>
+						<div class="text-center font-semibold text-[#722620] uppercase text-sm tracking-wider">Mar</div>
+						<div class="text-center font-semibold text-[#722620] uppercase text-sm tracking-wider">Mié</div>
+						<div class="text-center font-semibold text-[#722620] uppercase text-sm tracking-wider">Jue</div>
+						<div class="text-center font-semibold text-[#722620] uppercase text-sm tracking-wider">Vie</div>
+						<div class="text-center font-semibold text-[#722620] uppercase text-sm tracking-wider">Sáb</div>
+						<div class="text-center font-semibold text-[#722620] uppercase text-sm tracking-wider">Dom</div>
+					</div>
+					<div class="days-grid grid grid-cols-7 gap-3 mt-4">
+						<!-- Los días se generarán dinámicamente -->
+					</div>
+				</div>
+			</div>
+
+			<div id="events-panel" class="events-panel mt-10 bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#F2BC94] transform transition-all duration-500 hover:border-[#722620]/70 hover:shadow-2xl">
+				<h3 class="text-2xl font-bold text-[#30110D] mb-6 border-b-2 border-[#722620] pb-3 flex items-center">
+					<span class="inline-block w-3 h-8 bg-[#722620] mr-3 rounded-sm"></span>
+					Eventos del día
+				</h3>
+				<div class="events-list space-y-5"></div>
+			</div>
+		</main>
+
+		<footer class="bg-[#30110D] text-white/80 py-6 mt-12 text-center text-sm">
+			<p>© 2025 Calendario de Eventos - Comunidad Valenciana</p>
+		</footer>
+
+		<!-- Modal de Evento -->
+		<div id="event-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+			<div class="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full mx-4 transform transition-all duration-300 scale-95 opacity-0">
+				<div class="flex justify-between items-start mb-6">
+					<h3 class="text-2xl font-bold text-[#30110D] flex items-center">
+						<span class="inline-block w-2 h-8 bg-[#722620] mr-3 rounded-sm"></span>
+						<span id="modal-title"></span>
+					</h3>
+					<button id="close-modal" class="text-[#722620] hover:text-[#30110D] transition-all duration-300">
+						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+						</svg>
+					</button>
+				</div>
+				<div class="space-y-4">
+					<div class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-[#722620] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+						</svg>
+						<div>
+							<p class="font-semibold text-[#30110D]">Fecha</p>
+							<p id="modal-date" class="text-gray-600"></p>
+						</div>
+					</div>
+					<div class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-[#722620] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<div>
+							<p class="font-semibold text-[#30110D]">Ubicación</p>
+							<a id="modal-location" href="#" target="_blank" class="text-[#722620] hover:text-[#30110D] transition-all duration-300 inline-flex items-center gap-1">
+								<span id="modal-location-text"></span>
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-[#722620] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+						<div>
+							<p class="font-semibold text-[#30110D]">Descripción</p>
+							<p id="modal-description" class="text-gray-600"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="module" src="/src/helpers/events-calendar.js"></script>
 	</body>
 </html>

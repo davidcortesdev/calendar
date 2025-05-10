@@ -1,0 +1,174 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Fallas de Valencia",
+      "date": "2025-03-15",
+      "time": "10:00",
+      "type": "festivo",
+      "location": "valencia",
+      "description": "Desfile de la Ofrenda de Flores y quema de los monumentos falleros en la Nit de la Cremà.",
+      "venue": "Varias plazas del centro de Valencia"
+    },
+    {
+      "id": "2",
+      "title": "Magdalena de Castellón",
+      "date": "2026-03-07",
+      "time": "12:00",
+      "type": "festivo",
+      "location": "castellon",
+      "description": "Fiestas fundacionales de Castellón con reparto de buñuelos, pregón y ofrendas de Gaiatas.",
+      "venue": "Plaza de la Paz y Paseo Buenavista"
+    },
+    {
+      "id": "3",
+      "title": "Hogueras de San Juan",
+      "date": "2025-06-18",
+      "time": "14:00",
+      "type": "festivo",
+      "location": "alicante",
+      "description": "Mascletàs diarias, concurso de fogueres, ofrenda de flores y cremà final.",
+      "venue": "Plaza de los Luceros y Playa del Postiguet"
+    },
+    {
+      "id": "4",
+      "title": "Dansa València",
+      "date": "2025-04-05",
+      "time": "19:00",
+      "type": "cultural",
+      "location": "valencia",
+      "description": "Festival de danza y artes del movimiento con compañías nacionales e internacionales.",
+      "venue": "Palau de la Música y Teatros del Canal"
+    },
+    {
+      "id": "5",
+      "title": "Mostra de Vins i Aliments",
+      "date": "2025-05-10",
+      "time": "11:00",
+      "type": "gastronomico",
+      "location": "valencia",
+      "description": "Feria gastronómica con catas de vinos y productos típicos de la Comunitat Valenciana.",
+      "venue": "Marina de Valencia"
+    },
+    {
+      "id": "6",
+      "title": "Volta a Peu a València",
+      "date": "2025-05-25",
+      "time": "09:00",
+      "type": "deportivo",
+      "location": "valencia",
+      "description": "Carrera popular urbana de 5 km por el Jardín del Turia.",
+      "venue": "Jardín del Turia"
+    },
+    {
+      "id": "7",
+      "title": "Arenal Sound",
+      "date": "2025-07-30",
+      "time": "17:00",
+      "type": "cultural",
+      "location": "castellon",
+      "description": "Festival de música de varios estilos con escenarios en la playa de Burriana.",
+      "venue": "Playa de la Malvarrosa (Burriana)"
+    },
+    {
+      "id": "8",
+      "title": "Feria de Julio de Valencia",
+      "date": "2025-07-01",
+      "time": "18:00",
+      "type": "festivo",
+      "location": "valencia",
+      "description": "Mes de actividades, conciertos y fuegos artificiales en toda la ciudad.",
+      "venue": "Diversas ubicaciones en València"
+    },
+    {
+      "id": "9",
+      "title": "Rototom Sunsplash",
+      "date": "2025-08-16",
+      "time": "12:00",
+      "type": "cultural",
+      "location": "castellon",
+      "description": "Festival internacional de reggae, actividades culturales y talleres.",
+      "venue": "Parque del Albuerzo, Benicàssim"
+    },
+    {
+      "id": "10",
+      "title": "La Tomatina",
+      "date": "2025-08-27",
+      "time": "11:00",
+      "type": "festivo",
+      "location": "buñol",
+      "description": "Famosa batalla de tomates en las calles de Buñol.",
+      "venue": "Casco histórico de Buñol"
+    },
+    {
+      "id": "11",
+      "title": "Maratón de Valencia Trinidad Alfonso EDP",
+      "date": "2025-12-01",
+      "time": "08:30",
+      "type": "deportivo",
+      "location": "valencia",
+      "description": "Maratón internacional con récords mundiales y recorrido por la Ciudad de las Artes y las Ciencias.",
+      "venue": "Ciudad de las Artes y las Ciencias"
+    },
+    {
+      "id": "12",
+      "title": "Moros y Cristianos de Alcoy",
+      "date": "2025-05-03",
+      "time": "10:00",
+      "type": "festivo",
+      "location": "alcoy",
+      "description": "Representación de la batalla histórica entre moros y cristianos, con embajadas y batalla de arcabucería.",
+      "venue": "Calles del Centro de Alcoy"
+    },
+    {
+      "id": "13",
+      "title": "Festes de Moros i Cristians de Muro",
+      "date": "2025-05-09",
+      "time": "18:00",
+      "type": "festivo",
+      "location": "muro",
+      "description": "La Vespra, Entradas Cristiana y Mora, Dia dels Trons y la Pujà.",
+      "venue": "Centro de Muro"
+    },
+    {
+      "id": "14",
+      "title": "La Mare de Déu de la Salut",
+      "date": "2025-09-07",
+      "time": "09:00",
+      "type": "festivo",
+      "location": "algemesi",
+      "description": "Procesiones, danzas tradicionales y tornejants en honor a la patrona de Algemesí.",
+      "venue": "Basílica Menor de Sant Jaume y calles históricas"
+    },
+    {
+      "id": "15",
+      "title": "Fira d'Agost de Xàtiva",
+      "date": "2025-08-15",
+      "time": "12:00",
+      "type": "festivo",
+      "location": "xativa",
+      "description": "Feria municipal con atracciones, conciertos y actividades comerciales.",
+      "venue": "Recinto Ferial de Xàtiva"
+    },
+    {
+      "id": "16",
+      "title": "Toros al Carrer de Benicàssim",
+      "date": "2025-01-25",
+      "time": "17:00",
+      "type": "festivo",
+      "location": "benicassim",
+      "description": "Tradicional suelta de toros en la calle con encierros populares.",
+      "venue": "Calles de Benicàssim"
+    },
+    {
+      "id": "17",
+      "title": "Corpus Christi de Onda",
+      "date": "2025-06-19",
+      "time": "10:00",
+      "type": "festivo",
+      "location": "onda",
+      "description": "Alfombras florales, procesión y Eucaristía en honor al Corpus.",
+      "venue": "Centro histórico de Onda"
+    }
+  ]
+}
